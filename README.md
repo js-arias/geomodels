@@ -66,6 +66,12 @@ a *plate pixel model* is prefixed as `pixels-*`
 and is used to link pixels
 with tectonic plate.
 
+## Models
+
+Model                        | Pixelation | Time frame | Time step
+---------------------------- | ---------- | ---------- | ---------
+[Earhbyte](earthbyte-360-5/) |        360 |    410 - 0 |         5
+
 ## Citation and data license
 
 The models in the collection
