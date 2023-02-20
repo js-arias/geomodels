@@ -81,3 +81,56 @@ but if you do not include the model in the supplementary material
 of your publication,
 it might be a good idea to link this repository
 and help others to replicate or re-use your analysis.
+
+## Building your own model
+
+To build your own model,
+it is expected that you build it previously on [GPlates](https://www.gplates.org/).
+The file(s) containing the plate features
+must be in GPML format
+(do not use the compressed gpmlz).
+The rotation file must be a rot file.
+
+The process uses the command `plates`
+that is included in the [earth package](https://github.com/js-arias/earth).
+
+### Import a plate motion model
+
+First,
+transform all the tectonic features files
+into pixel files.
+For example to read the file `contient.gpml`
+to produce `continent.tab`,
+a pixelation file with 360 pixels at equator:
+
+```bash
+plates pixels import -e 360 -o continent.tab continent.gpml
+```
+
+If yo have multiple pixel files,
+you can merge them:
+
+```bash
+plates pixels cat -o pixels.tab continent.tab volcanic.tab
+```
+
+To check that pixelation is right
+you can make an image of the pixelation:
+
+```bash
+plates pixels map -o pixels.png pixels.tab
+```
+
+After pixelation is build,
+you can make the rotation,
+defining the starting time and time steps,
+or a predefined series of time stages.
+For example here we make the file `model.tab`
+from the pixels that we build before,
+from 420 million years,
+in 5 million years time stages,
+and using `rotations.rot` rotation file:
+
+```bash
+plates rotate --from 420 --step 5 --pix pixels.tab --rot rotations.tab model.tab
+```
