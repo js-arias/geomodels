@@ -1,0 +1,2 @@
+# do not track mac recovery files
+*.DS_Store
