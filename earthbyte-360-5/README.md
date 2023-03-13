@@ -31,12 +31,23 @@ pixelated at each time.
 
 The model is stored in the file `timepix-earthbyte.tab`.
 
+The reference
+for the values before present is Cao et al. 2017.
+
 ## Time frame
 
-The rotations are defined from 410 million years to today,
+The rotations are defined from 410 million years
+(up to 400 for the paleogeography)
+to today,
 in time stages of 5 million years.
 
 ## References
+
+Cao, W. et al.
+(2017)
+Improving global paleogeography since the late Paleozoic using paleobiology.
+Biogeosciences, 14, 5425-5439.
+DOI: [10.5194/bg-14-5425-2017](https://doi.org/10.5194/bg-14-5425-2017).
 
 Cao, X. et al.
 (2022).
