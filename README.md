@@ -140,3 +140,17 @@ and using `rotations.rot` rotation file:
 ```bash
 plates rotate --from 420 --step 5 --pix pixels.tab --rot rotations.tab model.tab
 ```
+
+### Import a paleogeography model
+
+There are several forms to build paleogeography models.
+
+To transform a plate motion model into
+a paleogeographic model
+use the command `timepix add`,
+if no time frame is indicated,
+the plate motion model time frame will be used:
+
+```bash
+plates timepix add --from 400 --in model.tab --val 1 timepix.tab
+```
