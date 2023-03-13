@@ -24,6 +24,13 @@ See that papers for additional references of the different rotations.
 
 The model is stored in the file `geomod-earthbyte.tab`.
 
+## Paleogeography
+
+The 'ocean plateau' layers are just the tectonic features
+pixelated at each time.
+
+The model is stored in the file `timepix-earthbyte.tab`.
+
 ## Time frame
 
 The rotations are defined from 410 million years to today,
