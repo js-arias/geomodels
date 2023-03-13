@@ -154,3 +154,10 @@ the plate motion model time frame will be used:
 ```bash
 plates timepix add --from 400 --in model.tab --val 1 timepix.tab
 ```
+
+In the case of only a unique time slice is to be added,
+use the flag `--at`:
+
+```bash
+plates timepix add --at 100 --in sea-rot.tab --val 2 timepix.tab
+```
