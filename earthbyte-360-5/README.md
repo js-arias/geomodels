@@ -22,7 +22,7 @@ Müller et al. 2019;
 Cao et al. 2022;
 See that papers for additional references of the different rotations.
 
-The model is stored in the file
+The model is stored in the file `geomod-earthbyte.tab`.
 
 ## Time frame
 
