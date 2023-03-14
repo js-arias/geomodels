@@ -191,3 +191,17 @@ plates pixels import -e 360 --at 120 -o lm-pix-120.tab lm.gpml
 plates rotate --pix lm-pix-120.tab --rot rotations.rot lm-rot-120.tab 120
 plates timepix add --at 120 --in lm-rot-120.tab --val 120 timepix.tab
 ```
+
+In other case
+you have a mask image file
+(a black and white image,
+only white pixels will be used).
+In this example,
+we add pixels from the mask `mask-lowsea.png`
+with a value of 2
+in the present time
+to the paleogeography model at `timepix.tab`:
+
+```bash
+plates timepix add --at 0 -f mask --in mask-lowsea.png --val 2 timepix.tab
+```
