@@ -28,16 +28,16 @@ The model is stored in the file `geomod-earthbyte.tab`.
 
 The 'ocean plateau' layers are just the tectonic features
 pixelated at each time.
+Other layers were prepared from the paleogeography model
+of Cao et al. 2017,
+that can be found at [EarthByte page](https://www.earthbyte.org/gplates-2-3-software-and-data-sets/).
 
 The model is stored in the file `timepix-earthbyte.tab`.
 
-The reference
-for the values before present is Cao et al. 2017.
-
 ## Time frame
 
-The rotations are defined from 410 million years
-(up to 400 for the paleogeography)
+The rotations are defined from 400 million years
+(up to 410 for the plate motion model)
 to today,
 in time stages of 5 million years.
 

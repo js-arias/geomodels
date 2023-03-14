@@ -68,9 +68,9 @@ with tectonic plate.
 
 ## Models
 
-Model                        | Pixelation | Time frame | Time step
----------------------------- | ---------- | ---------- | ---------
-[Earhbyte](earthbyte-360-5/) |        360 |    410 - 0 |         5
+Model                         | Pixelation | Time frame | Time step
+----------------------------- | ---------- | ---------- | ---------
+[Earthbyte](earthbyte-360-5/) |        360 |    400 - 0 |         5
 
 ## Citation and data license
 
@@ -149,15 +149,44 @@ To transform a plate motion model into
 a paleogeographic model
 use the command `timepix add`,
 if no time frame is indicated,
-the plate motion model time frame will be used:
+the plate motion model time frame will be used.
+For example using the plate motion model at `model.tab`
+to create a paleogeography model `timepix.tab`
+with the value of 1:
 
 ```bash
 plates timepix add --from 400 --in model.tab --val 1 timepix.tab
 ```
 
 In the case of only a unique time slice is to be added,
-use the flag `--at`:
+use the flag `--at`.
+In this example,
+we add the pixels of the model `sea-rot.tab`
+to paleogeography model `timepix.tab`
+at 100 million years
+with the value of 2:
 
 ```bash
 plates timepix add --at 100 --in sea-rot.tab --val 2 timepix.tab
+```
+
+In some cases,
+for example the [Cao model included in Earthbyte](earthbyte-360-5/),
+a GPML files contains layers
+at different time stages,
+with different polygons to be rotated
+at a particular time stage.
+In such cases,
+first we must make the pixelation,
+then rotate the pixelation model,
+and finally add the pixels.
+For example adding pixels from `lm.gpml`
+with a value of 3
+at 120 million years
+to the paleogeography model at `timepix.tab`:
+
+```bash
+plates pixels import -e 360 --at 120 -o lm-pix-120.tab lm.gpml
+plates rotate --pix lm-pix-120.tab --rot rotations.rot lm-rot-120.tab 120
+plates timepix add --at 120 --in lm-rot-120.tab --val 120 timepix.tab
 ```
