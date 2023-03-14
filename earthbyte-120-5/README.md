@@ -28,6 +28,9 @@ The model is stored in the file `geomod-earthbyte.tab`.
 
 The 'ocean plateau' layers are just the tectonic features
 pixelated at each time.
+Other layers were prepared from the paleogeography model
+of Cao et al. 2017,
+that can be found at [EarthByte page](https://www.earthbyte.org/gplates-2-3-software-and-data-sets/).
 
 The model is stored in the file `timepix-earthbyte.tab`.
 
@@ -39,6 +42,12 @@ to today,
 in time stages of 5 million years.
 
 ## References
+
+Cao, W. et al.
+(2017)
+Improving global paleogeography since the late Paleozoic using paleobiology.
+Biogeosciences, 14, 5425-5439.
+DOI: [10.5194/bg-14-5425-2017](https://doi.org/10.5194/bg-14-5425-2017).
 
 Cao, X. et al.
 (2022).
