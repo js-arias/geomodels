@@ -34,6 +34,10 @@ that can be found at [EarthByte page](https://www.earthbyte.org/gplates-2-3-soft
 
 The model is stored in the file `timepix-earthbyte.tab`.
 
+A color key,
+that can be used with `plates timepix map` command
+is stored in the file `key-earthbyte.tab`.
+
 ## Time frame
 
 The rotations are defined from 400 million years
