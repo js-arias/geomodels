@@ -31,6 +31,9 @@ pixelated at each time.
 Other layers were prepared from the paleogeography model
 of Cao et al. 2017,
 that can be found at [EarthByte page](https://www.earthbyte.org/gplates-2-3-software-and-data-sets/).
+Layers at present time are derived
+from [NaturalEarth](https://www.naturalearthdata.com/)
+and [NaturalEarth III](https://www.shadedrelief.com/natural3/index.html).
 
 The model is stored in the file `timepix-earthbyte.tab`.
 
