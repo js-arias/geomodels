@@ -71,6 +71,7 @@ with tectonic plate.
 Model                         | Pixelation | Time frame | Time step
 ----------------------------- | ---------- | ---------- | ---------
 [Earthbyte](earthbyte-360-5/) |        360 |    400 - 0 |         5
+[Earthbyte](earthbyte-180-5/) |        180 |    400 - 0 |         5
 [Earthbyte](earthbyte-120-5/) |        120 |    400 - 0 |         5
 
 ## Citation and data license
