@@ -21,25 +21,34 @@ in west-east direction.
 This pixelation is implemented
 in the [earth package](https://github.com/js-arias/earth).
 
+Resolution is indicated using the form `e<Number>`,
+with the number being the number of pixels
+in the equatorial ring.
+For example e360 is a pixelation with 360 pixels
+at the equatorial ring.
+
 ### Identification
 
 Each general model is kept
-in a particular directory,
-with the general name of the model
-followed by the number of pixels at the equator
-and the size  of the time steps,
-for example `earthbyte-360-5`
-is the earthbyte model,
-with a pixelation of 360 pixels at the equator,
-and with time steps of 5 million years.
+in its own repository,
+usually the files are identified
+by the name of the model,
+the kind of file,
+the spatial resolution,
+and time resolution.
+For example `earthbyte-motion-360-5.tab`
+is the plate motion model
+of the earthbyte model,
+with a e360 pixelation,
+and a time steps of 5 million years.
 
 ### Model types
 
 There are two kind of models:
 *plate motion models*
-and *paleogeography models*.
+and *landscape models*.
 
-A *plate motion model* is prefixed as `geomod-*`
+A *plate motion model* is identified as `*-motion-*.tab`
 and contains the pixel location
 at different times.
 Note that as a pixelation is used,
@@ -51,28 +60,28 @@ might be set in the same pixel in the past.
 This motion model is also know as a rotation model,
 because it is based on Euler rotations over a sphere.
 
-A *paleogeography model* is prefixed as `timepix-*`
+A *landscape model* is identified by its model name
 and contains pixel values
-(for example a land-scape identifier)
+(a landscape identifier)
 at different times.
 In this case pixel identities
 across different time periods are not preserved.
 To ease identification of the pixel values
-a key file prefixed `key-*`
-is provided for each paleogeography model.
+a key file identified with `*-key.tab`
+is provided for each landscape model.
 
 Additionally,
-a *plate pixel model* is prefixed as `pixels-*`
+a *plate pixel model* is identified as `*-pixels-*.tab`
 and is used to link pixels
 with tectonic plate.
 
 ## Models
 
-Model                         | Pixelation | Time frame | Time step
------------------------------ | ---------- | ---------- | ---------
-[Earthbyte](earthbyte-360-5/) |        360 |    400 - 0 |         5
-[Earthbyte](earthbyte-180-5/) |        180 |    400 - 0 |         5
-[Earthbyte](earthbyte-120-5/) |        120 |    400 - 0 |         5
+### Plate motion models
+
+Model                         |       Pixelation | Time frame | Time step | Landscape
+----------------------------- | ---------------- | ---------- | --------- | ---------------
+[Earthbyte](https://github.com/js-arias/gm-earthbyte) | e360, e180, e120 |    400 - 0 |         5 | Cao et al. 2017
 
 ## Citation and data license
 
@@ -82,7 +91,7 @@ As such,
 the original publication should be cited when the model is used.
 In each model,
 the relevant papers are given in a README file,
-and provided as bibtex.
+and provided as bibTeX.
 
 It is not required to cite this repository,
 but if you do not include the model in the supplementary material
@@ -143,17 +152,17 @@ and using `rotations.rot` rotation file:
 plates rotate --from 420 --step 5 --pix pixels.tab --rot rotations.tab model.tab
 ```
 
-### Import a paleogeography model
+### Import a paleo-landscape model
 
-There are several forms to build paleogeography models.
+There are several forms to build paleo-landscape models.
 
 To transform a plate motion model into
-a paleogeographic model
+a paleo-landscape model
 use the command `timepix add`,
 if no time frame is indicated,
 the plate motion model time frame will be used.
 For example using the plate motion model at `model.tab`
-to create a paleogeography model `timepix.tab`
+to create a paleo-landscape model `timepix.tab`
 with the value of 1:
 
 ```bash
@@ -164,7 +173,7 @@ In the case of only a unique time slice is to be added,
 use the flag `--at`.
 In this example,
 we add the pixels of the model `sea-rot.tab`
-to paleogeography model `timepix.tab`
+to paleo-landscape model `timepix.tab`
 at 100 million years
 with the value of 2:
 
@@ -185,7 +194,7 @@ and finally add the pixels.
 For example adding pixels from `lm.gpml`
 with a value of 3
 at 120 million years
-to the paleogeography model at `timepix.tab`:
+to the paleo-landscape model at `timepix.tab`:
 
 ```bash
 plates pixels import -e 360 --at 120 -o lm-pix-120.tab lm.gpml
@@ -201,7 +210,7 @@ In this example,
 we add pixels from the mask `mask-lowsea.png`
 with a value of 2
 in the present time
-to the paleogeography model at `timepix.tab`:
+to the paleo-landscape model at `timepix.tab`:
 
 ```bash
 plates timepix add --at 0 -f mask --in mask-lowsea.png --val 2 timepix.tab
