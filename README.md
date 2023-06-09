@@ -81,7 +81,11 @@ with tectonic plate.
 
 Model                         |       Pixelation | Time frame | Time step | Landscape
 ----------------------------- | ---------------- | ---------- | --------- | ---------------
-[Earthbyte](https://github.com/js-arias/gm-earthbyte) | e360, e180, e120 |    400 - 0 |         5 | Cao et al. 2017
+[EarthByte](https://github.com/js-arias/gm-earthbyte) | e360, e180, e120 |    400 - 0 |         5 | Cao et al. 2017
+[NoMotion](https://github.com/js-arias/gm-nomotion)   |       e180, e120 |   4500 - 0 |        -- | Natural Earth
+
+The [NoMotion](https://github.com/js-arias/gm-nomotion) model
+is an static Earth model with present geography.
 
 ## Citation and data license
 
