@@ -79,10 +79,10 @@ with tectonic plate.
 
 ### Plate motion models
 
-Model                         |       Pixelation | Time frame | Time step | Landscape
------------------------------ | ---------------- | ---------- | --------- | ---------------
-[EarthByte](https://github.com/js-arias/gm-earthbyte) | e360, e180, e120 |    400 - 0 |         5 | Cao et al. 2017
-[NoMotion](https://github.com/js-arias/gm-nomotion)   |       e180, e120 |   4500 - 0 |        -- | Natural Earth
+Model                         | Main reference |      Pixelation | Time frame | Time step | Landscape
+----------------------------- | -------------- | --------------- | ---------- | --------- | ---------------
+[EarthByte](https://github.com/js-arias/gm-earthbyte) | Müller et al. 2019 | e360, e180, e120 |    400 - 0 |         5 | Cao et al. 2017
+[NoMotion](https://github.com/js-arias/gm-nomotion)   | Public domain |       e180, e120 |   4500 - 0 |        -- | Natural Earth
 
 The [NoMotion](https://github.com/js-arias/gm-nomotion) model
 is an static Earth model with present geography.
