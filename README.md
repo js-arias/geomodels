@@ -46,7 +46,7 @@ and a time steps of 5 million years.
 
 There are two kind of models:
 *plate motion models*
-and *landscape models*.
+and *paleolandscape models*.
 
 A *plate motion model* is identified as `*-motion-*.tab`
 and contains the pixel location
@@ -60,7 +60,7 @@ might be set in the same pixel in the past.
 This motion model is also know as a rotation model,
 because it is based on Euler rotations over a sphere.
 
-A *landscape model* is identified by its model name
+A *paleolandscape model* is identified by its model name
 and contains pixel values
 (a landscape identifier)
 at different times.
@@ -68,7 +68,16 @@ In this case pixel identities
 across different time periods are not preserved.
 To ease identification of the pixel values
 a key file identified with `*-key.tab`
-is provided for each landscape model.
+is provided for each paleolandscape model.
+
+Paleolandscape models are associated with a particular
+plate motion model.
+To make them more general,
+unrotated paleolandscape models are also provided,
+so they can be used in combination
+with any rotation model.
+This models are identified as `*-landscape-unrot-*.tab` files,
+and should be rotated before using.
 
 Additionally,
 a *plate pixel model* is identified as `*-pixels-*.tab`
@@ -79,7 +88,7 @@ with tectonic plate.
 
 ### Plate motion models
 
-Model                         | Main reference |      Pixelation | Time frame | Time step | Landscape
+Model                         | Main reference |      Pixelation | Time frame | Time step | Paleolandscape
 ----------------------------- | -------------- | --------------- | ---------- | --------- | ---------------
 [EarthByte](https://github.com/js-arias/gm-earthbyte) | Müller et al. 2019 | e360, e180, e120 |    400 - 0 |         5 | Cao et al. 2017
 [PaleoMap](https://github.com/js-arias/gm-paleomap)   | Scotese 2016  | e360, e180, e120 |    540 - 0 | 5 | Scotese and Wright 2018
@@ -87,6 +96,13 @@ Model                         | Main reference |      Pixelation | Time frame | 
 
 The [NoMotion](https://github.com/js-arias/gm-nomotion) model
 is an static Earth model with present geography.
+
+### Unrotated paleolandscape models
+
+Model | Main reference | Pixelation | Time frame | Time step
+----- | -------------- | ---------- | ---------- | ---------
+[Cao et al 2017](https://github.com/js-arias/gml-cao) | Cao et al. 2017 | e360, e180, e120 | 400 - 0 | 5
+[PaleoMap](https://github.com/js-arias/gml-paleomap)  | Scotese and Wrigth 2018 | e360, e180, e120 | 540 - 0 | 5
 
 ## Citation and data license
 
@@ -157,17 +173,17 @@ and using `rotations.rot` rotation file:
 plates rotate --from 420 --step 5 --pix pixels.tab --rot rotations.tab model.tab
 ```
 
-### Import a paleo-landscape model
+### Import a paleolandscape model
 
-There are several forms to build paleo-landscape models.
+There are several forms to build paleolandscape models.
 
 To transform a plate motion model into
-a paleo-landscape model
+a paleolandscape model
 use the command `timepix add`,
 if no time frame is indicated,
 the plate motion model time frame will be used.
 For example using the plate motion model at `model.tab`
-to create a paleo-landscape model `timepix.tab`
+to create a paleolandscape model `timepix.tab`
 with the value of 1:
 
 ```bash
@@ -178,7 +194,7 @@ In the case of only a unique time slice is to be added,
 use the flag `--at`.
 In this example,
 we add the pixels of the model `sea-rot.tab`
-to paleo-landscape model `timepix.tab`
+to paleolandscape model `timepix.tab`
 at 100 million years
 with the value of 2:
 
@@ -199,7 +215,7 @@ and finally add the pixels.
 For example adding pixels from `lm.gpml`
 with a value of 3
 at 120 million years
-to the paleo-landscape model at `timepix.tab`:
+to the paleolandscape model at `timepix.tab`:
 
 ```bash
 plates pixels import -e 360 --at 120 -o lm-pix-120.tab lm.gpml
@@ -215,8 +231,41 @@ In this example,
 we add pixels from the mask `mask-lowsea.png`
 with a value of 2
 in the present time
-to the paleo-landscape model at `timepix.tab`:
+to the paleolandscape model at `timepix.tab`:
 
 ```bash
 plates timepix add --at 0 -f mask --in mask-lowsea.png --val 2 timepix.tab
 ```
+
+### Rotating a paleolandscape model
+
+To rotate a landscape model use the command `timepix rotate`,
+and give the rotation model you want to use:
+
+```bash
+plates timepix --model motion-model.tab --output landscape.tab landscape-unrot.tab
+```
+
+In which `motion-model.tab` is a plate motion model,
+`landscape-unrot.tab` is an unrotated paleolandscape model,
+and `landscape.tab` is the output model using the plate motion model.
+
+To make an unrotated model,
+just use the flag `--unrot`:
+
+```bash
+plates timepix --model motion-model.tab --unrot --output landscape-unrot.tab landscape.tab
+```
+
+Note that many paleolandscape models are developed
+with a particular plate motion model,
+so many landscape features will be lost in the rotations,
+if the landscape feature can not be matched
+with a pixel corresponding to a current tectonic plate.
+For example,
+in the collision of India and Asia,
+it is usual to add land between India and several Tibetan terranes.
+Then,
+this rotated paleolandscapes
+should be used not as final paleolandscapes,
+but as starting points of a paleolandscape reconstruction.
