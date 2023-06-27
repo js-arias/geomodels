@@ -91,6 +91,7 @@ with tectonic plate.
 Model                         | Main reference |      Pixelation | Time frame | Time step | Paleolandscape
 ----------------------------- | -------------- | --------------- | ---------- | --------- | ---------------
 [EarthByte](https://github.com/js-arias/gm-earthbyte) | Müller et al. 2019 | e360, e180, e120 |    400 - 0 |         5 | Cao et al. 2017
+[Muller et al 2002](https://github.com/js-arias/gm-muller-2022) | Müller et al. 2022 | e360, e180, e120 |    540 - 0 |         5 | Cao et al. 2017 (400-0); Scotese and Wright 2018 (405-540)
 [PaleoMap](https://github.com/js-arias/gm-paleomap)   | Scotese 2016  | e360, e180, e120 |    540 - 0 | 5 | Scotese and Wright 2018
 [NoMotion](https://github.com/js-arias/gm-nomotion)   | Public domain |       e180, e120 |   4500 - 0 |        -- | Natural Earth
 
