@@ -91,6 +91,7 @@ with tectonic plate.
 Model                         | Main reference |      Pixelation | Time frame | Time step | Paleolandscape
 ----------------------------- | -------------- | --------------- | ---------- | --------- | ---------------
 [EarthByte](https://github.com/js-arias/gm-earthbyte) | Müller et al. 2019 | e360, e180, e120 |    400 - 0 |         5 | Cao et al. 2017
+[Kocsis and Scotese 2021](https://github.com/js-arias/gm-kocsis)  | Kocsis and Scotese 2021 | e360, e180, e120 | 540 - 0 | 5 | Kocsis and Scoteses 2021
 [Muller et al 2002](https://github.com/js-arias/gm-muller-2022) | Müller et al. 2022 | e360, e180, e120 |    540 - 0 |         5 | Cao et al. 2017 (400-0); Scotese and Wright 2018 (405-540)
 [PaleoMap](https://github.com/js-arias/gm-paleomap)   | Scotese 2016  | e360, e180, e120 |    540 - 0 | 5 | Scotese and Wright 2018
 [NoMotion](https://github.com/js-arias/gm-nomotion)   | Public domain |       e180, e120 |   4500 - 0 |        -- | Natural Earth
@@ -103,6 +104,7 @@ is an static Earth model with present geography.
 Model | Main reference | Pixelation | Time frame | Time step
 ----- | -------------- | ---------- | ---------- | ---------
 [Cao et al 2017](https://github.com/js-arias/gml-cao) | Cao et al. 2017 | e360, e180, e120 | 400 - 0 | 5
+[Kocsis and Scotese 2021](https://github.com/js-arias/gml-kocsis) | Kocsis and Scotese 2021 | e360, e180, e120 | 540 - 0 | 5
 [PaleoMap](https://github.com/js-arias/gml-paleomap)  | Scotese and Wrigth 2018 | e360, e180, e120 | 540 - 0 | 5
 
 ## Citation and data license
