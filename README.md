@@ -92,7 +92,7 @@ Model                         | Main reference |      Pixelation | Time frame | 
 ----------------------------- | -------------- | --------------- | ---------- | --------- | ---------------
 [EarthByte](https://github.com/js-arias/gm-earthbyte) | Müller et al. 2019 | e360, e180, e120 |    400 - 0 |         5 | Cao et al. 2017
 [Kocsis and Scotese 2021](https://github.com/js-arias/gm-kocsis)  | Kocsis and Scotese 2021 | e360, e180, e120 | 540 - 0 | 5 | Kocsis and Scoteses 2021
-[Muller et al 2002](https://github.com/js-arias/gm-muller-2022) | Müller et al. 2022 | e360, e180, e120 |    540 - 0 |         5 | Cao et al. 2017 (400-0); Scotese and Wright 2018 (405-540)
+[Muller et al 2022](https://github.com/js-arias/gm-muller-2022) | Müller et al. 2022 | e360, e180, e120 |    540 - 0 |         5 | Cao et al. 2017 (400-0); Scotese and Wright 2018 (405-540)
 [PaleoMap](https://github.com/js-arias/gm-paleomap)   | Scotese 2016  | e360, e180, e120 |    540 - 0 | 5 | Scotese and Wright 2018
 [NoMotion](https://github.com/js-arias/gm-nomotion)   | Public domain |       e180, e120 |   4500 - 0 |        -- | Natural Earth
 
@@ -115,7 +115,7 @@ As such,
 the original publication should be cited when the model is used.
 In each model,
 the relevant papers are given in a README file,
-and provided as bibTeX.
+and provided as BibTeX.
 
 It is not required to cite this repository,
 but if you do not include the model in the supplementary material
